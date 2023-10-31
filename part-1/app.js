@@ -19,7 +19,7 @@ var app = new Vue({
   },
   filters: {
     currencyFormat: function (value) {
-      return 'Rp.' + Number.parseFloat(value).toFixed(2);
+      return '$' + Number.parseFloat(value).toFixed(2);
     },
   },
   computed: {
@@ -44,7 +44,21 @@ var app = new Vue({
       }, delay);
     },
     addItem: function (product) {
-      this.cart.push(product);
+      var productIndex;
+      var productExist = this.cart.filter(function (item, index) {
+        if (item.product.id == Number(product.id)) {
+          productIndex = index;
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      if (productExist.length) {
+        this.cart[productIndex].qty++;
+      } else {
+        this.cart.push({ product: product, qty: 1 });
+      }
     },
   },
 });
