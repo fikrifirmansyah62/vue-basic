@@ -4,6 +4,9 @@ var app = new Vue({
     maximum: 50,
     products: null,
     cart: [],
+    style: {
+      label: ['font-weight-bold', 'mr-2'],
+    },
   },
   mounted: function () {
     fetch('https://hplussport.com/api/products/order/price')

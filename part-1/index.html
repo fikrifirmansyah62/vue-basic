@@ -24,23 +24,26 @@
           <span class="badge badge-pill badge-success">{{ cart.length }}</span>
         </div>
       </nav>
-      <div class="form-inline mr-auto">
+      <br />
+      <h1>Clotch Shop</h1>
+      <div class="d-flex align-items-center">
         <label
           for=""
-          class="font-wight-bold mr-2"
+          :class="style.label"
           >MAX</label
         >
         <input
           type="number"
-          class="form-control w-25"
+          class="form-control mx-2"
+          :style="{'width': '60px', 'text-align': 'center'}"
+          v-model="maximum" />
+        <input
+          type="range"
+          class="custom-range"
+          min="0"
+          max="1000"
           v-model="maximum" />
       </div>
-      <input
-        type="range"
-        class="custom-range"
-        min="0"
-        max="1000"
-        v-model="maximum" />
       <div
         class="row d-flex mb-3 align-items-center"
         v-for="item in products"
