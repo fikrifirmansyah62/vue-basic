@@ -26,7 +26,9 @@
       </nav>
       <br />
       <h1>Clotch Shop</h1>
-      <div class="d-flex align-items-center">
+      <div
+        class="align-items-center"
+        :class="sliderState">
         <label
           for=""
           :class="style.label"
@@ -35,7 +37,7 @@
         <input
           type="number"
           class="form-control mx-2"
-          :style="{'width': '60px', 'text-align': 'center'}"
+          :style="{'width': style.inputWidth + 'px', 'text-align': 'center'}"
           v-model="maximum" />
         <input
           type="range"
