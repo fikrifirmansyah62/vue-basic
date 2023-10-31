@@ -16,6 +16,9 @@
       href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
       crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="/part-1/app.css" />
   </head>
   <body>
     <div
@@ -38,26 +41,31 @@
       </nav>
       <br />
       <h1>Clotch Shop</h1>
-      <div
-        class="align-items-center"
-        :class="sliderState">
-        <label
-          for=""
-          :class="style.label"
-          >MAX</label
-        >
-        <input
-          type="number"
-          class="form-control mx-2"
-          :style="{'width': style.inputWidth + 'px', 'text-align': 'center'}"
-          v-model="maximum" />
-        <input
-          type="range"
-          class="custom-range"
-          min="0"
-          max="1000"
-          v-model="maximum" />
-      </div>
+      <transition name="fade">
+        <div v-if="style.sliderStatus">
+          <div
+            class="align-items-center"
+            :class="sliderState">
+            <label
+              for=""
+              :class="style.label"
+              >MAX</label
+            >
+            <input
+              type="number"
+              class="form-control mx-2"
+              :style="{'width': style.inputWidth + 'px', 'text-align': 'center'}"
+              v-model="maximum" />
+            <input
+              type="range"
+              class="custom-range"
+              min="0"
+              max="1000"
+              v-model="maximum" />
+          </div>
+        </div>
+      </transition>
+
       <div
         class="row d-flex mb-3 align-items-center"
         v-for="item in products"
