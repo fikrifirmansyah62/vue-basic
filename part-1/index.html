@@ -5,7 +5,7 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1" />
-    <title>Vue Basic</title>
+    <title>Clotch Shop</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -41,8 +41,9 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false">
-              <b>Cart:</b>
-              <span class="badge badge-pill badge-success">{{ cart.length }}</span>
+              <span class="badge badge-pill badge-success">{{ cartQty }}</span>
+              <i class="fas fa-shopping-cart mx-2"></i>
+              {{ cartTotal | currencyFormat }}
             </button>
             <div
               class="dropdown-menu dropdown-menu-right"
