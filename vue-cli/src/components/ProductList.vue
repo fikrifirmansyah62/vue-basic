@@ -13,7 +13,7 @@
       <div class="col-1 m-auto">
         <button
           class="btn btn-info"
-          @click="$emit('add', item)">
+          @click="$emit('add-item', item)">
           +
         </button>
       </div>

@@ -1,7 +1,8 @@
-<!-- enter-active-class="animated fadeInDown"
-leave-active-class="animated slideOutRight" -->
 <template>
-  <transition name="fade">
+  <transition
+    name="custom"
+    enter-active-class="animated fadeInDown"
+    leave-active-class="animated slideOutRight">
     <div v-if="sliderStatus">
       <div
         class="align-items-center"
