@@ -6,7 +6,7 @@
     @enter="enter"
     @leave="leave">
     <div
-      class="row d-none mb-3 align-items-center"
+      class="row mb-3 align-items-center"
       v-for="(item, index) in showItem"
       :key="index"
       :data-index="index">
@@ -27,7 +27,9 @@
         <h3 class="text-info">{{ item.name }}</h3>
         <p class="mb-0">{{ item.description }}</p>
         <div class="h5 float-right">
-          <price :value="Number(item.price)"></price>
+          <price
+            :value="Number(item.price)"
+            :precision="2"></price>
         </div>
       </div>
     </div>
@@ -47,7 +49,7 @@ export default {
     showItem: function () {
       let max = this.maximum;
       return this.products.filter(function (item) {
-        return item.price <= max;
+        return Math.trunc(item.price) <= max;
       });
     },
   },
