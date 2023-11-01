@@ -49,7 +49,7 @@ export default {
     showItem: function () {
       let max = this.maximum;
       return this.products.filter(function (item) {
-        return Math.trunc(item.price) <= max;
+        return Math.trunc(item.price) <= max; //fix bug
       });
     },
   },
